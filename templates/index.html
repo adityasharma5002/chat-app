@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Chat App</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <!-- Application header -->
+        <h1>My Chat App</h1>
+
+        <!-- Main application area -->
+        <div class="main-area">
+
+            <!-- Left sidebar -->
+            <div class="sidebar">
+
+                <!-- Logged-in user -->
+                <div class="profile-area">
+
+                    <div class="username">
+                        👤 {{ username }}
+                    </div>
+
+                    <a href="{{ url_for('profile') }}">
+                        Profile
+                    </a>
+
+                    <a href="{{ url_for('logout') }}">
+                        Logout
+                    </a>
+
+                </div>
+
+
+                <!-- Users -->
+                <div class="users-area">
+
+                    <h3>Users</h3>
+
+                    <div id="users-list">
+                        Users will appear here
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right chat section -->
+            <div class="chat-section">
+
+                <!-- Chat messages -->
+                <div id="chat-box">
+
+                    <div class="welcome-message">
+                        Select a user to start chatting.
+                    </div>
+
+                </div>
+
+
+                <!-- Message input -->
+                <div class="input-area">
+
+                    <input
+                        type="text"
+                        id="message-input"
+                        placeholder="Type your message..."
+                    >
+
+                    <button id="send-button">
+                        Send
+                    </button>
+
+                    <button id="clear-button">
+                        Clear Chat
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Socket.IO library -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

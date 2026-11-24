@@ -1,0 +1,7 @@
+.venv/
+venv/
+__pycache__/
+instance/
+.env
+*.pyc
+test_resume_devansh_sharma.docx
